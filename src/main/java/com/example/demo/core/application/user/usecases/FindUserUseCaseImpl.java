@@ -6,15 +6,15 @@ import org.springframework.cache.annotation.Cacheable;
 
 import com.example.demo.core.domain.modules.user.UserEntity;
 import com.example.demo.core.domain.modules.user.UserMapper;
-import com.example.demo.core.domain.modules.user.UserRepository;
+import com.example.demo.core.domain.modules.user.UserRepositoryGateway;
 import com.example.demo.core.domain.modules.user.payload.response.UserResponsePayload;
 import com.example.demo.core.domain.modules.user.usecases.FindUserUseCase;
 
 public class FindUserUseCaseImpl implements FindUserUseCase {
 
-  private final UserRepository repository;
+  private final UserRepositoryGateway repository;
 
-  public FindUserUseCaseImpl(UserRepository repository) {
+  public FindUserUseCaseImpl(UserRepositoryGateway repository) {
     this.repository = repository;
   }
 

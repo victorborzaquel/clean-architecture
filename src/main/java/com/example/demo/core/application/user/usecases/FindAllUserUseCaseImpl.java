@@ -4,15 +4,15 @@ import java.util.List;
 
 import com.example.demo.core.domain.modules.user.UserEntity;
 import com.example.demo.core.domain.modules.user.UserMapper;
-import com.example.demo.core.domain.modules.user.UserRepository;
+import com.example.demo.core.domain.modules.user.UserRepositoryGateway;
 import com.example.demo.core.domain.modules.user.payload.response.UserResponsePayload;
 import com.example.demo.core.domain.modules.user.usecases.FindAllUserUseCase;
 
 public class FindAllUserUseCaseImpl implements FindAllUserUseCase {
 
-  private final UserRepository repository;
+  private final UserRepositoryGateway repository;
 
-  public FindAllUserUseCaseImpl(UserRepository repository) {
+  public FindAllUserUseCaseImpl(UserRepositoryGateway repository) {
     this.repository = repository;
   }
 

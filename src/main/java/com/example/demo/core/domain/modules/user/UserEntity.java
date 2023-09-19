@@ -14,12 +14,11 @@ public class UserEntity {
     private String email;
     private String passwordHash;
 
-    private UserEntity(UUID id, String firstName, String lastName, String email, String passwordHash) {
+    private UserEntity(UUID id, String firstName, String lastName, String email) {
         this.id = id != null ? id : UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.passwordHash = passwordHash;
         validate();
     }
 
@@ -30,7 +29,6 @@ public class UserEntity {
                 .and(email, "email").email()
                 .throwException();
     }
-
 
     public void hashPassword(String password, PasswordEncoderGateway.Encode encode) {
         Validate.of(password, "password").password().throwException();
@@ -57,11 +55,6 @@ public class UserEntity {
 
     public void setEmail(String email) {
         this.email = email;
-        validate();
-    }
-
-    public void setPasswordHash(String password) {
-        this.passwordHash = password;
         validate();
     }
 
@@ -110,7 +103,6 @@ public class UserEntity {
         private String firstName;
         private String lastName;
         private String email;
-        private String password;
 
         public Builder id(UUID id) {
             this.id = id;
@@ -132,13 +124,8 @@ public class UserEntity {
             return this;
         }
 
-        public Builder password(String password) {
-            this.password = password;
-            return this;
-        }
-
         public UserEntity build() {
-            return new UserEntity(id, firstName, lastName, email, password);
+            return new UserEntity(id, firstName, lastName, email);
         }
     }
 }

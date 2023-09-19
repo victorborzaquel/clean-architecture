@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public interface Repository<T> {
 
-  T save(T entity);
+  void save(T entity);
 
   T find(UUID id);
 

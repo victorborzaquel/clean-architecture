@@ -6,7 +6,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.core.domain.modules.user.UserEntity;
-import com.example.demo.core.domain.modules.user.UserRepository;
+import com.example.demo.core.domain.modules.user.UserRepositoryGateway;
 import com.example.demo.core.domain.modules.user.exceptions.UserNotFoundException;
 
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ import lombok.Value;
 
 @Service
 @RequiredArgsConstructor
-public class JpaUserRepositoryAdapter implements UserRepository {
+public class JpaUserRepositoryAdapter implements UserRepositoryGateway {
 
   private final JpaUserRepository jpaRepository;
 

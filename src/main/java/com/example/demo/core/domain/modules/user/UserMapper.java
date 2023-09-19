@@ -29,7 +29,6 @@ public class UserMapper {
         .firstName(payload.firstName())
         .lastName(payload.lastName())
         .email(payload.email())
-        .password(payload.password())
         .build();
   }
 
@@ -39,7 +38,6 @@ public class UserMapper {
         .firstName(payload.firstName())
         .lastName(payload.lastName())
         .email(payload.email())
-        .password(payload.password())
         .build();
   }
 

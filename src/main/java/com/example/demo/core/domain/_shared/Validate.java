@@ -94,7 +94,7 @@ public class Validate<T> {
   public Validate<T> email() {
     String string = getString();
 
-    if (!string.matches("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$")) {
+    if (!string.matches("^(.+)@(.+)$")) {
       errors.add("Invalid email");
     }
 

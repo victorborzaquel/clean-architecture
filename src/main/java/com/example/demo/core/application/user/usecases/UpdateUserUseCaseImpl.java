@@ -6,16 +6,16 @@ import org.springframework.cache.annotation.CacheEvict;
 
 import com.example.demo.core.domain.modules.user.UserEntity;
 import com.example.demo.core.domain.modules.user.UserMapper;
-import com.example.demo.core.domain.modules.user.UserRepository;
+import com.example.demo.core.domain.modules.user.UserRepositoryGateway;
 import com.example.demo.core.domain.modules.user.payload.request.UpdateUserRequestPayload;
 import com.example.demo.core.domain.modules.user.payload.response.UserResponsePayload;
 import com.example.demo.core.domain.modules.user.usecases.UpdateUserUseCase;
 
 public class UpdateUserUseCaseImpl implements UpdateUserUseCase {
 
-  private final UserRepository repository;
+  private final UserRepositoryGateway repository;
 
-  public UpdateUserUseCaseImpl(UserRepository repository) {
+  public UpdateUserUseCaseImpl(UserRepositoryGateway repository) {
     this.repository = repository;
   }
 
